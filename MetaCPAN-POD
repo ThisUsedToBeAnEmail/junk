@@ -1,0 +1,62 @@
+package Pod::Search;
+
+use 5.006;
+use Moose;
+use Search::Elasticsearch;
+use Data::Dumper;
+use MetaCpan::Client;
+
+=head1 NAME
+
+Pod::Search
+
+=head1 VERSION
+
+Version 0.01
+
+=cut
+
+our $VERSION = '0.01';
+
+sub search {
+    my ($self, $module, $method) = @_;
+
+    my $es = Search::Elasticsearch->new(
+        cxn_pool => 'Static::NoPing',
+        nodes => 'api.metacpan.org',
+    );
+
+    my $latest_file = $es->search(
+        index => 'v0',
+        type => 'file',
+        body => {
+            query => { match_all => {} },
+            filter => {
+                and => [
+                    { term => { 'file.authorized' => 'true' } },
+                    { term => { 'file.module.name' => $module } },
+                    { term => { 'file.status' => 'latest' } }
+                ]
+            },
+        },
+    );
+
+    my $source = $latest_file->{hits}{hits}[0]{_source};
+    my $description = $source->{description};
+    my $pod = $source->{pod};
+
+    # returns plain text pod
+    warn Dumper $pod;
+
+    # Could do some crazy parsing....
+    # but the actual problem is
+    # /pod endpoint, can't query es directly
+    my $mcpan = MetaCPAN::Client->new;
+    my $html_pod = $mcpan->pod($module)->html;
+
+    warn Dumper $html_pod;
+    # what
+    #TODO index
+}
+
+1;
