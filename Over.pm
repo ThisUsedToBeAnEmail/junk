@@ -1,7 +1,5 @@
 package Over;
 
-my ($overload_this_number, $number ) = @ARGV;
-
 use overload
     "+" => "plus",
     "-" => "minus";
@@ -27,6 +25,8 @@ sub plus {
 }
 
 package main;
+
+my ($overload_this_number, $number ) = @ARGV;
 
 use feature qw/say/;
 
