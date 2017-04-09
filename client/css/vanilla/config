@@ -1,0 +1,48 @@
+%margintop: 5px 0;
+
+%btn-close: @
+  background: #ef3730;
+  border-color: #d7453f;
+  color: #fff;
+@
+
+%btn-close-hover: @
+  background: #f04e48;
+  border-color: #bf0e07;
+  color: #fff;
+@
+ 
+%btn-close-active: @
+  background: #aa2e20;
+  border-color: #3b49af;
+  color: #fff;
+@
+
+%btn-close-loading: @
+  border-bottom-color: #fff;
+  border-left-color: #fff;
+@
+
+@btnSuccess: @
+  background: #43cb49;
+  border-color: #20bd38;
+  color: #fff;
+@
+
+%btn-success-hover: @
+  background: #0dce0f;
+  border-color: #08a721;
+  color: #fff;
+@
+ 
+%btn-success-active: @
+  background: #3caa20;
+  border-color: #3b49af;
+  color: #fff;
+@
+
+%btn-success-loading: @
+  border-bottom-color: #fff;
+  border-left-color: #fff;
+@
+

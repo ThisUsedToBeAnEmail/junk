@@ -1,0 +1,23 @@
+.breadcrumb,
+.tab,
+.pagination,
+.nav {
+  list-style: none;
+  margin: .5rem 0;
+}
+.breadcrumb {
+  padding: 1.2rem;
+}
+.breadcrumb .breadcrumb-item {
+  display: inline-block;
+  margin: 0;
+}
+.breadcrumb .breadcrumb-item:last-child {
+  color: #acb3c2;
+}
+.breadcrumb .breadcrumb-item:not(:first-child)::before {
+  color: #e7e9ed;
+  content: "/";
+  padding: 0 .4rem;
+}
+

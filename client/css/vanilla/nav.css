@@ -1,0 +1,32 @@
+.nav {
+  display: flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.nav .nav-item a {
+  color: #727e96;
+  padding: .6rem .8rem;
+  text-decoration: none;
+}
+.nav .nav-item a:focus,
+.nav .nav-item a:hover {
+  color: #5764c6;
+}
+.nav .nav-item.active > a {
+  font-weight: bold;
+}
+.nav .nav-item.active > a:focus,
+.nav .nav-item.active > a:hover {
+  color: #5764c6;
+}
+.nav .nav {
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+}
+.nav .nav a {
+  color: #acb3c2;
+}
+

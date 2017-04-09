@@ -1,0 +1,26 @@
+.label {
+  background: #f8f9fa;
+  border-radius: .2rem;
+  color: inherit;
+  display: inline-block;
+  line-height: 1;
+  padding: .3rem .4rem;
+  vertical-align: baseline;
+}
+.label.label-primary {
+  background: #5764c6;
+  color: #fff;
+}
+.label.label-success {
+  background: #32b643;
+  color: #fff;
+}
+.label.label-warning {
+  background: #ffb700;
+  color: #fff;
+}
+.label.label-danger {
+  background: #e85600;
+  color: #fff;
+}
+
